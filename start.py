@@ -2,6 +2,7 @@ import bot
 from DataBase import DataBase
 from secret import TOKEN, GROUP_ID
 from settings import TOP_ADMIN_ID
+import api
 
 
 def start():
@@ -13,4 +14,5 @@ def start():
 
 
 if __name__ == "__main__":
+    api.app.run(debug=True)
     start()
