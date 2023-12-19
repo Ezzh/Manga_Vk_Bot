@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+    <title>Databases</title>
+    <link rel="shortcut icon" href="image/kurisu.ico" type="image/x-icon">
+</head>
+<style>
+    h1{
+        text-align: center;    
+    }
+    span{
+        background-color: gray;
+        border-radius: 10px;
+        padding-inline: 20px;
+    }
+    th, td{
+        border: 3px solid grey;
+        border-radius: 10px;
+        background-color: gray;
+        
+    }
+    td{
+        text-align: center;
+    }
+    table {
+        width: 100%;
+    }
+    div{
+        text-align: center;
+    }
+    table + div{
+        margin-top: 20px;
+    }
+    body {
+        font-size:150%;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-image: url("image/ghoul.jpg");
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+    video{
+        border-radius: 10px;
+        overflow: hidden;
+        border: 3px;
+    }
+    img{
+        border: 10px;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 300;
+        height: 300;
+    }
+</style>
+<body>
+    <h1><span>Worker Database</span></h1>
+    <table>
+        <tr><th>User id</th><th>Vk id</th><th>role</th></tr>
+        {% for worker in workers %}
+            <tr><td>{{worker[2]}}</td> <td>{{worker[0]}}</td> <td>{{worker[1]}}</td></tr>
+        {% endfor %}
+    </table>
+    <h1><span>Requests</span></h1>
+    <table>
+        <tr><th>id</th><th>captain</th><th>project</th><th>worker</th><th>bet</th><th>condition</th><th>other</th></tr>
+        {% for request in requests %}
+            <tr><td>{{request[6]}}</td><td>{{request[0]}}</td><td>{{request[1]}}</td><td>{{request[2]}}</td><td>{{request[3]}}</td><td>{{request[4]}}</td><td>{{request[5]}}</td></tr>
+        {% endfor %}
+    </table>
+    <div><img width="200" height="200" src="image/ghoul2.gif" alt="ghoul"></div>
+</body>

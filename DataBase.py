@@ -60,6 +60,11 @@ class DataBase:
             f"""SELECT captain, project, worker, bet, condition, other, id FROM requests WHERE worker = ?""",
             (worker,)).fetchall()
         return res
+    
+    def get_all_requests(self):
+        res = self.cur.execute(
+            f"""SELECT captain, project, worker, bet, condition, other, id FROM requests""").fetchall()
+        return res
 
     def delete_request(self, id):
         self.cur.execute(f"""DELETE FROM requests WHERE id = ?""", (id,))

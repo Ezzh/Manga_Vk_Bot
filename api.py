@@ -1,8 +1,15 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template, send_from_directory
 from DataBase import DataBase
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='image')
 db = DataBase('basa.db')
+
+@app.route("/")
+def index():
+    workers = db.get_workers()
+    requests = db.get_all_requests()
+    print(requests)
+    return render_template("index.html", workers=workers, requests=requests)
 
 @app.route("/api/add_worker", methods=["POST"])
 def add_worker():
