@@ -1,12 +1,11 @@
-import settings
-from secret import TOKEN, URL_API
-import handlers
+import vk_bot.settings as settings
+import vk_bot.handlers as handlers
 import vk_api
-from Top_admin import Top_admin
-from Worker import Worker
-from MyVkBotLongPoll import MyVkBotLongPoll
+from vk_bot.Top_admin import Top_admin
+from vk_bot.Worker import Worker
+from vk_bot.MyVkBotLongPoll import MyVkBotLongPoll
 from vk_api.bot_longpoll import VkBotEventType
-from mykeyboard import createkeyboard
+from vk_bot.mykeyboard import createkeyboard
 from vk_api.utils import get_random_id
 import time
 
@@ -22,7 +21,7 @@ class UserState:
 
 class BOT:
     def __init__(self, token, group_id, db, top_admin_id):
-        self.vk_session = vk_api.VkApi(token=TOKEN)
+        self.vk_session = vk_api.VkApi(token=token)
         self.longpoll = MyVkBotLongPoll(self.vk_session, group_id)
         self.api = self.vk_session.get_api()
         self.group_id = group_id

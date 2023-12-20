@@ -1,9 +1,7 @@
-from flask import Flask, request, jsonify, render_template, send_from_directory
-from DataBase import DataBase
-
+from flask import Flask, request, jsonify, render_template
+from database.DataBase import DataBase
 app = Flask(__name__, static_folder='image')
-db = DataBase('basa.db')
-
+db = DataBase()
 @app.route("/")
 def index():
     workers = db.get_workers()

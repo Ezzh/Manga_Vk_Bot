@@ -1,9 +1,10 @@
 import datetime
 import sqlite3
+import os
 
 
 class DataBase:
-    def __init__(self, db):
+    def __init__(self, db="/Users/nikitababkov/Documents/GitHub/Manga_Vk_Bot/database/basa.db"):
         self.con = sqlite3.connect(db, check_same_thread=False)
         self.cur = self.con.cursor()
 

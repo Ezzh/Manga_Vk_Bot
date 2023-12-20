@@ -1,6 +1,6 @@
 from vk_api.utils import get_random_id
 
-from mykeyboard import createkeyboard
+from vk_bot.mykeyboard import createkeyboard
 
 
 # .ini
